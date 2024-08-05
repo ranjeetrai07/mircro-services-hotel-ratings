@@ -1,25 +1,30 @@
 package com.codewithranjeet.userService.entities;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
-@NoArgsConstructor
+
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Table(name = "micro_user")
 @Entity
 public class User {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column(name = "user_name", nullable = false, length = 100)
+    private Integer id;
+    @Column(name = "user_id")
+    private String userId;
+    @Column(name = "user_name")
     private String name;
-    @Column(name = "email", nullable = false, length = 100)
+    @Column(name = "email")
     private String email;
-
+    @Column(name = "about")
     private String about;
+
 }
